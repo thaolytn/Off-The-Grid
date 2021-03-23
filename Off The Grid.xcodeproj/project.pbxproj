@@ -3,23 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A25E98520D2B7135BC0E6246 /* Pods_Off_The_Grid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539FCD9E5BD963820D1A8FD8 /* Pods_Off_The_Grid.framework */; };
 		E54888E42602485100631BA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54888E32602485100631BA1 /* AppDelegate.swift */; };
 		E54888E62602485100631BA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54888E52602485100631BA1 /* SceneDelegate.swift */; };
-		E54888E82602485100631BA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54888E72602485100631BA1 /* ViewController.swift */; };
+		E54888E82602485100631BA1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54888E72602485100631BA1 /* MapViewController.swift */; };
 		E54888EB2602485100631BA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54888E92602485100631BA1 /* Main.storyboard */; };
 		E54888ED2602485200631BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54888EC2602485200631BA1 /* Assets.xcassets */; };
 		E54888F02602485200631BA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54888EE2602485200631BA1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39C6FAA1F48AB0E883A4CB1C /* Pods-Off The Grid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Off The Grid.release.xcconfig"; path = "Target Support Files/Pods-Off The Grid/Pods-Off The Grid.release.xcconfig"; sourceTree = "<group>"; };
+		539FCD9E5BD963820D1A8FD8 /* Pods_Off_The_Grid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Off_The_Grid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B871CDF0698B1CFF6EB78900 /* Pods-Off The Grid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Off The Grid.debug.xcconfig"; path = "Target Support Files/Pods-Off The Grid/Pods-Off The Grid.debug.xcconfig"; sourceTree = "<group>"; };
 		E54888E02602485100631BA1 /* Off The Grid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Off The Grid.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54888E32602485100631BA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E54888E52602485100631BA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E54888E72602485100631BA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E54888E72602485100631BA1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E54888EA2602485100631BA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E54888EC2602485200631BA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E54888EF2602485200631BA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25E98520D2B7135BC0E6246 /* Pods_Off_The_Grid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3789F8C3F1C62ADA882172CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B871CDF0698B1CFF6EB78900 /* Pods-Off The Grid.debug.xcconfig */,
+				39C6FAA1F48AB0E883A4CB1C /* Pods-Off The Grid.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9223C118151ADD6649DAE99F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				539FCD9E5BD963820D1A8FD8 /* Pods_Off_The_Grid.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E54888D72602485100631BA1 = {
 			isa = PBXGroup;
 			children = (
 				E54888E22602485100631BA1 /* Off The Grid */,
 				E54888E12602485100631BA1 /* Products */,
+				3789F8C3F1C62ADA882172CC /* Pods */,
+				9223C118151ADD6649DAE99F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +82,29 @@
 			children = (
 				E54888E32602485100631BA1 /* AppDelegate.swift */,
 				E54888E52602485100631BA1 /* SceneDelegate.swift */,
-				E54888E72602485100631BA1 /* ViewController.swift */,
-				E54888E92602485100631BA1 /* Main.storyboard */,
+				E548890226024D9C00631BA1 /* Controllers */,
+				E548890326024DA900631BA1 /* Views */,
 				E54888EC2602485200631BA1 /* Assets.xcassets */,
 				E54888EE2602485200631BA1 /* LaunchScreen.storyboard */,
 				E54888F12602485200631BA1 /* Info.plist */,
 			);
 			path = "Off The Grid";
+			sourceTree = "<group>";
+		};
+		E548890226024D9C00631BA1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E54888E72602485100631BA1 /* MapViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E548890326024DA900631BA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E54888E92602485100631BA1 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +114,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E54888F42602485200631BA1 /* Build configuration list for PBXNativeTarget "Off The Grid" */;
 			buildPhases = (
+				D173A7C9F912E7DF26CE4B53 /* [CP] Check Pods Manifest.lock */,
 				E54888DC2602485100631BA1 /* Sources */,
 				E54888DD2602485100631BA1 /* Frameworks */,
 				E54888DE2602485100631BA1 /* Resources */,
+				7AF4FC1DF348E9FBE5A34EDD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,12 +174,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7AF4FC1DF348E9FBE5A34EDD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Off The Grid/Pods-Off The Grid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Off The Grid/Pods-Off The Grid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Off The Grid/Pods-Off The Grid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D173A7C9F912E7DF26CE4B53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Off The Grid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E54888DC2602485100631BA1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E54888E82602485100631BA1 /* ViewController.swift in Sources */,
+				E54888E82602485100631BA1 /* MapViewController.swift in Sources */,
 				E54888E42602485100631BA1 /* AppDelegate.swift in Sources */,
 				E54888E62602485100631BA1 /* SceneDelegate.swift in Sources */,
 			);
@@ -283,6 +367,7 @@
 		};
 		E54888F52602485200631BA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B871CDF0698B1CFF6EB78900 /* Pods-Off The Grid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +387,7 @@
 		};
 		E54888F62602485200631BA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39C6FAA1F48AB0E883A4CB1C /* Pods-Off The Grid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
