@@ -40,6 +40,12 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     
     
+    
+    
+    
+    
+    
+    
     // MARK: - MGLMapViewDelegate Functions
     
     func mapView(_ mapView: MGLMapView, shouldChangeFrom oldCamera: MGLMapCamera, to newCamera: MGLMapCamera) -> Bool {
