@@ -14,6 +14,7 @@
 		E54888EB2602485100631BA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54888E92602485100631BA1 /* Main.storyboard */; };
 		E54888ED2602485200631BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54888EC2602485200631BA1 /* Assets.xcassets */; };
 		E54888F02602485200631BA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54888EE2602485200631BA1 /* LaunchScreen.storyboard */; };
+		E5586765260ACED600385A85 /* locations.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E5586764260ACED600385A85 /* locations.geojson */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E54888EC2602485200631BA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E54888EF2602485200631BA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E54888F12602485200631BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5586764260ACED600385A85 /* locations.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = locations.geojson; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				E54888EC2602485200631BA1 /* Assets.xcassets */,
 				E54888EE2602485200631BA1 /* LaunchScreen.storyboard */,
 				E54888F12602485200631BA1 /* Info.plist */,
+				E5586764260ACED600385A85 /* locations.geojson */,
 			);
 			path = "Off The Grid";
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5586765260ACED600385A85 /* locations.geojson in Resources */,
 				E54888F02602485200631BA1 /* LaunchScreen.storyboard in Resources */,
 				E54888ED2602485200631BA1 /* Assets.xcassets in Resources */,
 				E54888EB2602485100631BA1 /* Main.storyboard in Resources */,
