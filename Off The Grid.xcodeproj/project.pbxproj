@@ -15,6 +15,9 @@
 		E54888ED2602485200631BA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54888EC2602485200631BA1 /* Assets.xcassets */; };
 		E54888F02602485200631BA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54888EE2602485200631BA1 /* LaunchScreen.storyboard */; };
 		E5586765260ACED600385A85 /* locations.geojson in Resources */ = {isa = PBXBuildFile; fileRef = E5586764260ACED600385A85 /* locations.geojson */; };
+		E56520DB260ADB8D00C6A537 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56520DA260ADB8D00C6A537 /* LocationData.swift */; };
+		E56520DF260B718800C6A537 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56520DE260B718800C6A537 /* LocationModel.swift */; };
+		E56520E2260B73AF00C6A537 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56520E1260B73AF00C6A537 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		E54888EF2602485200631BA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E54888F12602485200631BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5586764260ACED600385A85 /* locations.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = locations.geojson; sourceTree = "<group>"; };
+		E56520DA260ADB8D00C6A537 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		E56520DE260B718800C6A537 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		E56520E1260B73AF00C6A537 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +90,9 @@
 			children = (
 				E54888E32602485100631BA1 /* AppDelegate.swift */,
 				E54888E52602485100631BA1 /* SceneDelegate.swift */,
-				E548890226024D9C00631BA1 /* Controllers */,
-				E548890326024DA900631BA1 /* Views */,
+				E56520D9260ADB6200C6A537 /* Model */,
+				E548890226024D9C00631BA1 /* Controller */,
+				E548890326024DA900631BA1 /* View */,
 				E54888EC2602485200631BA1 /* Assets.xcassets */,
 				E54888EE2602485200631BA1 /* LaunchScreen.storyboard */,
 				E54888F12602485200631BA1 /* Info.plist */,
@@ -94,20 +101,30 @@
 			path = "Off The Grid";
 			sourceTree = "<group>";
 		};
-		E548890226024D9C00631BA1 /* Controllers */ = {
+		E548890226024D9C00631BA1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				E54888E72602485100631BA1 /* MapViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		E548890326024DA900631BA1 /* Views */ = {
+		E548890326024DA900631BA1 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E54888E92602485100631BA1 /* Main.storyboard */,
 			);
-			path = Views;
+			path = View;
+			sourceTree = "<group>";
+		};
+		E56520D9260ADB6200C6A537 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E56520E1260B73AF00C6A537 /* LocationManager.swift */,
+				E56520DA260ADB8D00C6A537 /* LocationData.swift */,
+				E56520DE260B718800C6A537 /* LocationModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,8 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E56520DB260ADB8D00C6A537 /* LocationData.swift in Sources */,
 				E54888E82602485100631BA1 /* MapViewController.swift in Sources */,
+				E56520E2260B73AF00C6A537 /* LocationManager.swift in Sources */,
 				E54888E42602485100631BA1 /* AppDelegate.swift in Sources */,
+				E56520DF260B718800C6A537 /* LocationModel.swift in Sources */,
 				E54888E62602485100631BA1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

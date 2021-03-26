@@ -11,6 +11,7 @@ import Mapbox
 class MapViewController: UIViewController, MGLMapViewDelegate {
 
     private var nyc: MGLCoordinateBounds!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +43,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     
     
-    
-    
-    
-    
     // MARK: - MGLMapViewDelegate Functions
     
     func mapView(_ mapView: MGLMapView, shouldChangeFrom oldCamera: MGLMapCamera, to newCamera: MGLMapCamera) -> Bool {
@@ -70,6 +67,48 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         return inside && intersects
     }
     
+    
+    
+    func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
+        
+        DispatchQueue.global().async {
+            let locationURL = Bundle.main.url(forResource: "locations", withExtension: "geojson")!
+            let data = try! Data(contentsOf: locationURL)
+            
+            DispatchQueue.main.async {
+                self.drawLocationData(data: data, style: style)
+            }
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    // MARK: - Utility Functions
+    
+    func drawLocationData(data: Data, style: MGLStyle) {
+        
+        //guard let style = mapView.style else { return }
+        
+        let feature = try! MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as! MGLShapeCollectionFeature
+        
+        let shapeSource = MGLShapeSource(identifier: "store-locations", shape: feature, options: nil)
+        
+        let shapeLayer = MGLSymbolStyleLayer(identifier: "store-locations", source: shapeSource)
+        
+        if let image = UIImage(named: "location-icon") {
+            style.setImage(image, forName: "location-symbol")
+        }
+        
+        shapeLayer.iconImageName = NSExpression(forConstantValue: "location-symbol")
+        
+        style.addSource(shapeSource)
+        style.addLayer(shapeLayer)
+        
+    }
     
 
 }
