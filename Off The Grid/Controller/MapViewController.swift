@@ -11,6 +11,7 @@ import Mapbox
 class MapViewController: UIViewController, MGLMapViewDelegate {
 
     private var nyc: MGLCoordinateBounds!
+    var mapView: MGLMapView!
 
     
     override func viewDidLoad() {
@@ -18,7 +19,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
 
         // Set the map's styling URL
         let url = URL(string: "mapbox://styles/thaolyngo/ckdq24xor0rv81iqgphyie5qg")
-        let mapView = MGLMapView(frame: view.bounds, styleURL: url)
+        mapView = MGLMapView(frame: view.bounds, styleURL: url)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         mapView.compassView.compassVisibility = .hidden
@@ -35,6 +36,13 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
  
         // Add the mapView to the current View
         view.addSubview(mapView)
+        
+        // Add gesture recognizer when user taps on locations
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleItemTap(sender:)))
+        for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
+            singleTap.require(toFail: recognizer)
+        }
+        mapView.addGestureRecognizer(singleTap)
 
     }
 
@@ -91,7 +99,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     func drawLocationData(data: Data, style: MGLStyle) {
         
-        //guard let style = mapView.style else { return }
         
         let feature = try! MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as! MGLShapeCollectionFeature
         
@@ -108,6 +115,24 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         style.addSource(shapeSource)
         style.addLayer(shapeLayer)
         
+    }
+    
+    
+    @objc @IBAction func handleItemTap(sender: UIGestureRecognizer) {
+        if sender.state == .ended {
+            let point : CGPoint = sender.location(in: mapView)
+            let layer : Set = ["store-locations"]
+ 
+            if mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).count > 0  {
+                let feature = mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).first
+                if let name = feature?.attribute(forKey: "name") as? String {
+                    print(name)
+                }
+
+            } else {
+                print("Not a features")
+            }
+        }
     }
     
 
