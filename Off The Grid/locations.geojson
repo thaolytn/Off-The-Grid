@@ -1,0 +1,50 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Front General Store",
+        "category": "store"
+      },
+      "geometry": {
+        "coordinates": [
+          -73.987491,
+          40.702498
+        ],
+        "type": "Point"
+      },
+      "id": "40b9da27247042ec1e884dadded15697"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Banh Mi Saigon",
+        "category": "restaurant"
+      },
+      "geometry": {
+        "coordinates": [
+          -73.996726,
+          40.719224
+        ],
+        "type": "Point"
+      },
+      "id": "8f5ac735ae5169566db222d07b51fc71"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Brooklyn Ball Factory",
+        "category": "coffee"
+      },
+      "geometry": {
+        "coordinates": [
+          -73.945882,
+          40.707214
+        ],
+        "type": "Point"
+      },
+      "id": "efdf24af201a6a797a4f1277c4a28df4"
+    }
+  ],
+  "type": "FeatureCollection"
+}
