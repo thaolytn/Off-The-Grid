@@ -18,6 +18,8 @@
 		E56520DB260ADB8D00C6A537 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56520DA260ADB8D00C6A537 /* LocationData.swift */; };
 		E56520DF260B718800C6A537 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56520DE260B718800C6A537 /* LocationModel.swift */; };
 		E56520E2260B73AF00C6A537 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56520E1260B73AF00C6A537 /* LocationManager.swift */; };
+		E571008E263756660000CE29 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E571008D263756660000CE29 /* DescriptionView.xib */; };
+		E5710092263757950000CE29 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5710091263757950000CE29 /* DescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		E56520DA260ADB8D00C6A537 /* LocationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
 		E56520DE260B718800C6A537 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		E56520E1260B73AF00C6A537 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		E571008D263756660000CE29 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
+		E5710091263757950000CE29 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				E54888E92602485100631BA1 /* Main.storyboard */,
+				E571008D263756660000CE29 /* DescriptionView.xib */,
+				E5710091263757950000CE29 /* DescriptionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 			files = (
 				E5586765260ACED600385A85 /* locations.geojson in Resources */,
 				E54888F02602485200631BA1 /* LaunchScreen.storyboard in Resources */,
+				E571008E263756660000CE29 /* DescriptionView.xib in Resources */,
 				E54888ED2602485200631BA1 /* Assets.xcassets in Resources */,
 				E54888EB2602485100631BA1 /* Main.storyboard in Resources */,
 			);
@@ -243,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E56520DB260ADB8D00C6A537 /* LocationData.swift in Sources */,
+				E5710092263757950000CE29 /* DescriptionView.swift in Sources */,
 				E54888E82602485100631BA1 /* MapViewController.swift in Sources */,
 				E56520E2260B73AF00C6A537 /* LocationManager.swift in Sources */,
 				E54888E42602485100631BA1 /* AppDelegate.swift in Sources */,

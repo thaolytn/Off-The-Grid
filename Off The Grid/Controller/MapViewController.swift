@@ -125,14 +125,31 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
  
             if mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).count > 0  {
                 let feature = mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).first
+                generateDescPage(feature: feature as! MGLPointFeature)
+                
+                // Test Print
                 if let name = feature?.attribute(forKey: "name") as? String {
                     print(name)
                 }
 
             } else {
-                print("Not a features")
+                // Test Print
+                print("Not a feature")
             }
         }
+    }
+    
+    
+    
+    func generateDescPage(feature: MGLPointFeature) {
+        
+        
+        
+    }
+    
+    
+    func addPageViewController() {
+        
     }
     
 
