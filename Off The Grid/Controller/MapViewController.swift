@@ -146,16 +146,15 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     
     
-//    func generateDescPage(feature: MGLPointFeature) {
-//
-//        let descVC = DescriptionViewController()
-//        if let featureName = feature.attribute(forKey: "name") as? String {
-//            descVC.featureName = featureName
-//        }
-//
-//        //self.present(descVC, animated: true, completion: nil)
-//
-//    }
+    func generateDescPage(feature: MGLPointFeature) {
+
+        let descVC = DescriptionViewController()
+        if let featureName = feature.attribute(forKey: "name") as? String {
+            descVC.featureName = featureName
+        }
+
+
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
