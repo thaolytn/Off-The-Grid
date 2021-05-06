@@ -12,7 +12,18 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
 
     private var nyc: MGLCoordinateBounds!
     var mapView: MGLMapView!
+    var currentFeature : MGLPointFeature!
 
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,16 +135,10 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
             let layer : Set = ["store-locations"]
  
             if mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).count > 0  {
-                let feature = mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).first
-                generateDescPage(feature: feature as! MGLPointFeature)
-                
-                // Test Print
-                if let name = feature?.attribute(forKey: "name") as? String {
-                    print(name)
-                }
+                currentFeature = mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).first as? MGLPointFeature
+                performSegue(withIdentifier: "goToDescription", sender: self)
 
             } else {
-                // Test Print
                 print("Not a feature")
             }
         }
@@ -141,16 +146,25 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     
     
-    func generateDescPage(feature: MGLPointFeature) {
-        
-        let descVC = DescriptionViewController()
-        if let featureName = feature.attribute(forKey: "name") as? String {
-            descVC.featureName = featureName
-        }
+//    func generateDescPage(feature: MGLPointFeature) {
+//
+//        let descVC = DescriptionViewController()
+//        if let featureName = feature.attribute(forKey: "name") as? String {
+//            descVC.featureName = featureName
+//        }
+//
+//        //self.present(descVC, animated: true, completion: nil)
+//
+//    }
     
-        self.present(descVC, animated: true, completion: nil)
-        
-    }    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDescription" {
+            let descVC = segue.destination as! DescriptionViewController
+            descVC.featureName = currentFeature.attribute(forKey: "name") as! String
+                        
+        }
+    }
 
 }
 

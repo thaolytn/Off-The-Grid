@@ -18,7 +18,7 @@ class DescriptionViewController: UIViewController{
     
         let nameLabel = UILabel()
         nameLabel.text = featureName
-        nameLabel.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
+        nameLabel.frame = CGRect(x: 100, y: 100, width: 300, height: 50)
         view.addSubview(nameLabel)
         
     }
