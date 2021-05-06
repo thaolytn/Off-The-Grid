@@ -21,11 +21,28 @@
                     <navigationItem key="navigationItem" id="F7J-Nd-J1K"/>
                     <connections>
                         <segue destination="GDN-YR-Yqr" kind="show" identifier="goToDescription" id="TDS-Zy-E7f"/>
+                        <segue destination="Fcf-m1-xyy" kind="show" identifier="goToAbout" id="CsO-8A-m6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="810.14492753623199" y="83.705357142857139"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="saI-FE-3xg">
+            <objects>
+                <viewController id="Fcf-m1-xyy" customClass="AboutViewController" customModule="Off_The_Grid" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="68w-fH-eA3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WEy-DN-gWo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="y2i-ni-RW8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iA7-Zq-dR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058" y="-352"/>
         </scene>
         <!--Description View Controller-->
         <scene sceneID="w1p-Z1-hLD">
@@ -41,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UB0-oh-oVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779.7101449275365" y="66.964285714285708"/>
+            <point key="canvasLocation" x="2059" y="488"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mW3-FZ-mQD">
@@ -51,6 +68,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1v5-gA-fsi">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

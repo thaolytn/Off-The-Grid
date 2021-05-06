@@ -48,6 +48,13 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         // Add the mapView to the current View
         view.addSubview(mapView)
         
+        // Programmatically add About button
+        let aboutButton = UIButton(frame: CGRect(x: 20, y: 50, width: 100, height: 30))
+        aboutButton.backgroundColor = .black
+        aboutButton.setTitle("ABOUT", for: .normal)
+        aboutButton.addTarget(self, action: #selector(handleAboutButtonTap), for: .touchUpInside)
+        view.addSubview(aboutButton)
+        
         // Add gesture recognizer when user taps on locations
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleItemTap(sender:)))
         for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
@@ -142,6 +149,11 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
                 print("Not a feature")
             }
         }
+    }
+    
+    
+    @objc @IBAction func handleAboutButtonTap(sender: UIButton!) {
+        performSegue(withIdentifier: "goToAbout", sender: self)
     }
     
     
