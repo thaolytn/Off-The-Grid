@@ -72,7 +72,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     // MARK: - MGLMapViewDelegate Functions
     
     func mapView(_ mapView: MGLMapView, shouldChangeFrom oldCamera: MGLMapCamera, to newCamera: MGLMapCamera) -> Bool {
-        
         // Get the current camera to restore it after
         let currentCamera = mapView.camera
         
@@ -96,7 +95,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
-        
         DispatchQueue.global().async {
             let locationURL = Bundle.main.url(forResource: "locations", withExtension: "geojson")!
             let data = try! Data(contentsOf: locationURL)
@@ -108,7 +106,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         
     }
     
-    
+
     
     
     
@@ -116,19 +114,25 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     // MARK: - Utility Functions
     
     func drawLocationData(data: Data, style: MGLStyle) {
-        
-        
         let feature = try! MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as! MGLShapeCollectionFeature
         
-        let shapeSource = MGLShapeSource(identifier: "store-locations", shape: feature, options: nil)
+        let shapeSource = MGLShapeSource(identifier: "locations", shape: feature, options: nil)
         
-        let shapeLayer = MGLSymbolStyleLayer(identifier: "store-locations", source: shapeSource)
+        let shapeLayer = MGLSymbolStyleLayer(identifier: "locations", source: shapeSource)
         
         if let image = UIImage(named: "location-icon") {
             style.setImage(image, forName: "location-symbol")
         }
         
         shapeLayer.iconImageName = NSExpression(forConstantValue: "location-symbol")
+        shapeLayer.iconAnchor = NSExpression(forConstantValue: "bottom")
+        
+        
+        shapeLayer.textColor = NSExpression(forConstantValue: UIColor.white)
+        shapeLayer.textFontSize = NSExpression(forConstantValue: NSNumber(value: 10))
+        shapeLayer.text = NSExpression(forKeyPath: "name")
+        shapeLayer.textAnchor = NSExpression(forConstantValue: "top")
+        shapeLayer.textJustification = NSExpression(forConstantValue: "center")
         
         style.addSource(shapeSource)
         style.addLayer(shapeLayer)
@@ -139,7 +143,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     @objc @IBAction func handleItemTap(sender: UIGestureRecognizer) {
         if sender.state == .ended {
             let point : CGPoint = sender.location(in: mapView)
-            let layer : Set = ["store-locations"]
+            let layer : Set = ["locations"]
  
             if mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).count > 0  {
                 currentFeature = mapView.visibleFeatures(at: point, styleLayerIdentifiers: layer).first as? MGLPointFeature
@@ -159,13 +163,10 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     
     func generateDescPage(feature: MGLPointFeature) {
-
         let descVC = DescriptionViewController()
         if let featureName = feature.attribute(forKey: "name") as? String {
             descVC.featureName = featureName
         }
-
-
     }
     
     
@@ -173,7 +174,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         if segue.identifier == "goToDescription" {
             let descVC = segue.destination as! DescriptionViewController
             descVC.featureName = currentFeature.attribute(forKey: "name") as! String
-                        
         }
     }
 
