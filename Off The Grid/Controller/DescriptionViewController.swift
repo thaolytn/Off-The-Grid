@@ -9,18 +9,20 @@ import UIKit
 
 class DescriptionViewController: UIViewController{
     
-    var featureName = ""
+    var locationName = ""
+    var locationDescription = ""
+    var locationAddress = ""
+    var locationPhone = ""
+    var featureWebsite = ""
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .black
-    
-        let nameLabel = UILabel()
-        nameLabel.text = featureName
-        nameLabel.frame = CGRect(x: 100, y: 100, width: 300, height: 50)
-        view.addSubview(nameLabel)
-        
+        nameLabel.text = locationName
     }
     
 }

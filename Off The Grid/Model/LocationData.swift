@@ -7,23 +7,18 @@
 
 import Foundation
 
-struct LocationData : Codable {
+struct LocationData : Decodable {
     let type : String
     let features : [Feature]
 }
 
-struct Feature : Codable {
+struct Feature : Decodable {
     let type : String
     let properties : Property
-    let geometry : Geometry
 }
 
-struct Property : Codable {
+struct Property : Decodable {
     let name : String
     let category : String
 }
 
-struct Geometry : Codable {
-    let coordinates : [[Double]]
-    let type : String
-}

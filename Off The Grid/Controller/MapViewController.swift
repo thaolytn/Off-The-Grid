@@ -55,6 +55,15 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         aboutButton.addTarget(self, action: #selector(handleAboutButtonTap), for: .touchUpInside)
         view.addSubview(aboutButton)
         
+        
+        // Programmatically add List button
+        let listButton = UIButton(frame: CGRect(x: 280, y: 50, width: 100, height: 30))
+        listButton.backgroundColor = .black
+        listButton.setTitle("LIST", for: .normal)
+        listButton.addTarget(self, action: #selector(handleListButtonTap), for: .touchUpInside)
+        view.addSubview(listButton)
+        
+        
         // Add gesture recognizer when user taps on locations
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleItemTap(sender:)))
         for recognizer in mapView.gestureRecognizers! where recognizer is UITapGestureRecognizer {
@@ -112,7 +121,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     
     
     // MARK: - Utility Functions
-    
     func drawLocationData(data: Data, style: MGLStyle) {
         let feature = try! MGLShape(data: data, encoding: String.Encoding.utf8.rawValue) as! MGLShapeCollectionFeature
         
@@ -136,10 +144,19 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         
         style.addSource(shapeSource)
         style.addLayer(shapeLayer)
-        
     }
     
     
+    func generateDescPage(feature: MGLPointFeature) {
+        let descVC = DescriptionViewController()
+        if let featureName = feature.attribute(forKey: "name") as? String {
+            descVC.locationName = featureName
+        }
+    }
+    
+    
+    
+    //MARK: - Segue Methods
     @objc @IBAction func handleItemTap(sender: UIGestureRecognizer) {
         if sender.state == .ended {
             let point : CGPoint = sender.location(in: mapView)
@@ -155,25 +172,18 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         }
     }
     
-    
     @objc @IBAction func handleAboutButtonTap(sender: UIButton!) {
         performSegue(withIdentifier: "goToAbout", sender: self)
     }
     
-    
-    
-    func generateDescPage(feature: MGLPointFeature) {
-        let descVC = DescriptionViewController()
-        if let featureName = feature.attribute(forKey: "name") as? String {
-            descVC.featureName = featureName
-        }
+    @objc @IBAction func handleListButtonTap(sender: UIButton!) {
+        performSegue(withIdentifier: "goToList", sender: self)
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDescription" {
             let descVC = segue.destination as! DescriptionViewController
-            descVC.featureName = currentFeature.attribute(forKey: "name") as! String
+            descVC.locationName = currentFeature.attribute(forKey: "name") as! String
         }
     }
 

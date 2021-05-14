@@ -22,11 +22,44 @@
                     <connections>
                         <segue destination="GDN-YR-Yqr" kind="show" identifier="goToDescription" id="TDS-Zy-E7f"/>
                         <segue destination="Fcf-m1-xyy" kind="show" identifier="goToAbout" id="CsO-8A-m6B"/>
+                        <segue destination="cLV-3z-TIH" kind="show" identifier="goToList" id="ppo-Ps-dxL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="810.14492753623199" y="83.705357142857139"/>
+        </scene>
+        <!--List View Controller-->
+        <scene sceneID="JcN-0n-RMV">
+            <objects>
+                <tableViewController id="cLV-3z-TIH" customClass="ListViewController" customModule="Off_The_Grid" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nrF-R6-L8O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" id="Oqr-ID-bnF">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Oqr-ID-bnF" id="wuT-dU-0Vl">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cLV-3z-TIH" id="rmX-Lx-VQN"/>
+                            <outlet property="delegate" destination="cLV-3z-TIH" id="qAJ-yI-VHs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="mdl-aW-b0y"/>
+                    <connections>
+                        <segue destination="GDN-YR-Yqr" kind="show" identifier="goToDescriptionFromList" id="2he-uL-syr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4l-QI-Ygk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2522" y="50"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="saI-FE-3xg">
@@ -42,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iA7-Zq-dR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2058" y="-352"/>
+            <point key="canvasLocation" x="1658" y="-704"/>
         </scene>
         <!--Description View Controller-->
         <scene sceneID="w1p-Z1-hLD">
@@ -51,14 +84,26 @@
                     <view key="view" contentMode="scaleToFill" id="tg2-e2-C2l">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU4-S9-ayB">
+                                <rect key="frame" x="139" y="150" width="137" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vMH-fy-ow7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="QnC-sL-zwz"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="vU4-S9-ayB" id="9vN-Is-tCb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UB0-oh-oVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2059" y="488"/>
+            <point key="canvasLocation" x="1657.9710144927537" y="999.77678571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mW3-FZ-mQD">
@@ -81,6 +126,9 @@
             <point key="canvasLocation" x="-100.00000000000001" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2he-uL-syr"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

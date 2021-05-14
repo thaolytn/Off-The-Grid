@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct LocationModel {
+struct Location {
     
     let name : String
     let category : String
-    let coordinates : [[Double]]
-    
+
 }
