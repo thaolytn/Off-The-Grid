@@ -19,6 +19,8 @@ struct Feature : Decodable {
 
 struct Property : Decodable {
     let name : String
-    let category : String
+    let category : [String]
+    let address : String
 }
+
 

@@ -15,6 +15,16 @@ class ListViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backArrowImage = UIImage(systemName: "arrow.backward")
+        navigationController?.navigationBar.backIndicatorImage = backArrowImage
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = backArrowImage
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         locations = locationDataManager.loadLocations()
         tableView.rowHeight = 100
         tableView.reloadData()

@@ -10,6 +10,6 @@ import Foundation
 struct Location {
     
     let name : String
-    let category : String
+    let category : [String]
 
 }
