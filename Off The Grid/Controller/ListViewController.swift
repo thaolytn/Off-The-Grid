@@ -15,7 +15,7 @@ class ListViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backArrowImage = UIImage(systemName: "arrow.backward")
+        let backArrowImage = UIImage(named: "back-button-white")
         navigationController?.navigationBar.backIndicatorImage = backArrowImage
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = backArrowImage
         
@@ -27,6 +27,7 @@ class ListViewController : UITableViewController {
         
         locations = locationDataManager.loadLocations()
         tableView.rowHeight = 100
+        tableView.separatorStyle = .none
         tableView.reloadData()
     }
     

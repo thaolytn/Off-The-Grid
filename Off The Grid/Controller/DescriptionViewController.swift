@@ -21,7 +21,7 @@ class DescriptionViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backArrowImage = UIImage(systemName: "arrow.backward")
+        let backArrowImage = UIImage(named: "back-button-white")
         navigationController?.navigationBar.backIndicatorImage = backArrowImage
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = backArrowImage
         

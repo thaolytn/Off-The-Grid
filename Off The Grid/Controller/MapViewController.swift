@@ -49,17 +49,19 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         view.addSubview(mapView)
         
         // Programmatically add About button
-        let aboutButton = UIButton(frame: CGRect(x: 20, y: 50, width: 100, height: 30))
-        aboutButton.backgroundColor = .black
-        aboutButton.setTitle("ABOUT", for: .normal)
+        let aboutImage = UIImage(named: "nine-flower")
+        let aboutButton = UIButton(type: .custom)
+        aboutButton.frame = CGRect(x: 1, y: 15, width: 90, height: 90)
+        aboutButton.setImage(aboutImage, for: .normal)
         aboutButton.addTarget(self, action: #selector(handleAboutButtonTap), for: .touchUpInside)
         view.addSubview(aboutButton)
         
         
         // Programmatically add List button
-        let listButton = UIButton(frame: CGRect(x: 280, y: 50, width: 100, height: 30))
-        listButton.backgroundColor = .black
-        listButton.setTitle("LIST", for: .normal)
+        let listImage = UIImage(named: "list-button")
+        let listButton = UIButton(type: .custom)
+        listButton.frame = CGRect(x: 300, y: 15, width: 90, height: 90)
+        listButton.setImage(listImage, for: .normal)
         listButton.addTarget(self, action: #selector(handleListButtonTap), for: .touchUpInside)
         view.addSubview(listButton)
         
