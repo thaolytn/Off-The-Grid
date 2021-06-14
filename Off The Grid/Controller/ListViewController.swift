@@ -15,20 +15,25 @@ class ListViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let backArrowImage = UIImage(named: "back-button-white")
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        let backArrowImage = UIImage(named: "back-button-black")
         navigationController?.navigationBar.backIndicatorImage = backArrowImage
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = backArrowImage
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
-        
-        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
+        navigationController?.navigationBar.barTintColor = .white
+        navigationController?.navigationBar.tintColor = .black
+       
         locations = locationDataManager.loadLocations()
         tableView.rowHeight = 100
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
         tableView.reloadData()
+        
+        
     }
     
     
@@ -69,6 +74,7 @@ extension ListViewController {
         
         if let item = locations?[indexPath.row] {
             cell.textLabel?.text = item.name
+            cell.textLabel?.textColor = .black
         } else {
             cell.textLabel?.text = ""
         }

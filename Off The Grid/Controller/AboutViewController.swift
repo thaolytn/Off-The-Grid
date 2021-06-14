@@ -18,15 +18,12 @@ class AboutViewController : UIViewController {
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.view.backgroundColor = .clear
+        //navigationController?.navigationBar.barTintColor = UIColor(red: 0.13, green: 0.13, blue: 0.13, alpha: 1.00)
+        navigationController?.navigationBar.tintColor = .white
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        view.backgroundColor = .black
-    
-        let header = UILabel()
-        header.text = "ABOUT PAGE"
-        header.frame = CGRect(x: 150, y: 150, width: 300, height: 50)
-        view.addSubview(header)
     }
 }
