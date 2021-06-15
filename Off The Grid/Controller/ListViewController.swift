@@ -15,6 +15,8 @@ class ListViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "LocationCell", bundle: nil), forCellReuseIdentifier: "locationCell")
+        
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         let backArrowImage = UIImage(named: "back-button-black")
@@ -28,11 +30,10 @@ class ListViewController : UITableViewController {
         navigationController?.navigationBar.tintColor = .black
        
         locations = locationDataManager.loadLocations()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 130
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         tableView.reloadData()
-        
         
     }
     
@@ -70,13 +71,15 @@ extension ListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationCell
+        cell.selectionStyle = .none
         
         if let item = locations?[indexPath.row] {
-            cell.textLabel?.text = item.name
-            cell.textLabel?.textColor = .black
+            cell.locationName?.text = item.name
+            cell.categoryLabel?.text = item.category
         } else {
-            cell.textLabel?.text = ""
+            cell.locationName?.text = ""
+            cell.categoryLabel?.text = ""
         }
         
         return cell

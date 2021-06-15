@@ -10,6 +10,8 @@
 		0907890E2641AA9D002837C8 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907890D2641AA9D002837C8 /* DescriptionViewController.swift */; };
 		090789102642370D002837C8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0907890F2642370D002837C8 /* Extensions.swift */; };
 		0927F661264A316B0007F6F6 /* LocationDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0927F660264A316B0007F6F6 /* LocationDataManager.swift */; };
+		0949FCD926784F46005E0C77 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0949FCD826784F46005E0C77 /* LocationCell.xib */; };
+		0949FCDB26785100005E0C77 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949FCDA26785100005E0C77 /* LocationCell.swift */; };
 		09B9C02E26438D7E00099B82 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9C02D26438D7E00099B82 /* AboutViewController.swift */; };
 		09B9C03026458E1600099B82 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B9C02F26458E1600099B82 /* ListViewController.swift */; };
 		A25E98520D2B7135BC0E6246 /* Pods_Off_The_Grid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539FCD9E5BD963820D1A8FD8 /* Pods_Off_The_Grid.framework */; };
@@ -28,6 +30,8 @@
 		0907890D2641AA9D002837C8 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		0907890F2642370D002837C8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0927F660264A316B0007F6F6 /* LocationDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataManager.swift; sourceTree = "<group>"; };
+		0949FCD826784F46005E0C77 /* LocationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationCell.xib; sourceTree = "<group>"; };
+		0949FCDA26785100005E0C77 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		09B9C02D26438D7E00099B82 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		09B9C02F26458E1600099B82 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		39C6FAA1F48AB0E883A4CB1C /* Pods-Off The Grid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Off The Grid.release.xcconfig"; path = "Target Support Files/Pods-Off The Grid/Pods-Off The Grid.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				E54888E92602485100631BA1 /* Main.storyboard */,
+				0949FCD826784F46005E0C77 /* LocationCell.xib */,
+				0949FCDA26785100005E0C77 /* LocationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0949FCD926784F46005E0C77 /* LocationCell.xib in Resources */,
 				E5586765260ACED600385A85 /* locations.geojson in Resources */,
 				E54888F02602485200631BA1 /* LaunchScreen.storyboard in Resources */,
 				E54888ED2602485200631BA1 /* Assets.xcassets in Resources */,
@@ -260,6 +267,7 @@
 				E54888E82602485100631BA1 /* MapViewController.swift in Sources */,
 				09B9C02E26438D7E00099B82 /* AboutViewController.swift in Sources */,
 				090789102642370D002837C8 /* Extensions.swift in Sources */,
+				0949FCDB26785100005E0C77 /* LocationCell.swift in Sources */,
 				E54888E42602485100631BA1 /* AppDelegate.swift in Sources */,
 				E56520DF260B718800C6A537 /* Location.swift in Sources */,
 				09B9C03026458E1600099B82 /* ListViewController.swift in Sources */,

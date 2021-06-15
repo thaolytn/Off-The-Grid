@@ -4,10 +4,7 @@
       "type": "Feature",
       "properties": {
         "name": "Front General Store",
-        "category": [
-          "vintage",
-          "thrift"
-        ],
+        "category": "thrift",
         "address": "143 Front St, Brooklyn, NY 11201"
       },
       "geometry": {
@@ -23,9 +20,7 @@
       "type": "Feature",
       "properties": {
         "name": "Banh Mi Saigon",
-        "category": [
-          "vietnamese restaurant"
-        ],
+        "category": "restaurant",
         "address": "198 Grand St, New York, NY 10013"
       },
       "geometry": {
@@ -41,10 +36,7 @@
       "type": "Feature",
       "properties": {
         "name": "Brooklyn Ball Factory",
-        "category": [
-          "cafe",
-          "tea"
-        ],
+        "category": "coffee",
         "address": "95 Montrose Ave, Brooklyn, NY 11206"
       },
       "geometry": {
