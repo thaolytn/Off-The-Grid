@@ -9,14 +9,15 @@ import UIKit
 
 class DescriptionViewController: UIViewController{
     
-    var locationName = ""
-    var locationDescription = ""
-    var locationAddress = ""
-    var locationPhone = ""
-    var featureWebsite = ""
+    var locationName : String = ""
+    var locationDescription : String = ""
+    var locationAddress : String = ""
+    var locationCoordinates : [Float] = []
     
+    @IBOutlet weak var takeMeButton: UIButton!
+    @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var locationAddressLabel: UILabel!
     
-    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,24 @@ class DescriptionViewController: UIViewController{
         
         navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        nameLabel.text = locationName
+        locationNameLabel.text = locationName
+        locationAddressLabel.text = locationAddress
+        
+        takeMeButton.addTarget(self, action: #selector(handleTakeMeButtonTap), for: .touchUpInside)
     }
     
+    
+    @objc @IBAction func handleTakeMeButtonTap(sender: UIButton!) {
+  
+        guard let url = URL(string:"comgooglemaps://") else { return }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            let name = locationName.replacingOccurrences(of: " ", with: "+")
+            
+            guard let fullURL = URL(string: "comgooglemaps://?q=\(name)&zoom=15&views=traffic") else { return }
+            
+            UIApplication.shared.open(fullURL, options: [:])
+        }
+        
+    }
 }

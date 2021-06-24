@@ -9,7 +9,7 @@ import UIKit
 
 class LocationCell: UITableViewCell {
 
-    @IBOutlet weak var locationName: UILabel!
+    @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     
     override func awakeFromNib() {

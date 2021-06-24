@@ -11,5 +11,7 @@ struct Location {
     
     let name : String
     let category : String
+    let address : String
+    let coordinates : [Float]
 
 }

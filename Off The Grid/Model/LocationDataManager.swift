@@ -26,8 +26,10 @@ struct LocationDataManager {
             for feature in decodedData.features {
                 let name = feature.properties.name
                 let category = feature.properties.category
+                let address = feature.properties.address
+                let coordinates = feature.geometry.coordinates
                 
-                let locationModel = Location(name: name, category: category)
+                let locationModel = Location(name: name, category: category, address: address, coordinates: coordinates)
                 locations.append(locationModel)
             }
             return locations

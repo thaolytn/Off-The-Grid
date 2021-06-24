@@ -56,6 +56,8 @@ class ListViewController : UITableViewController {
             let selectedLocation = locations?[row]
             let descVC = segue.destination as! DescriptionViewController
             descVC.locationName = selectedLocation?.name ?? ""
+            descVC.locationAddress = selectedLocation?.address ?? ""
+            descVC.locationCoordinates = selectedLocation?.coordinates ?? []
         }
     }
 }
@@ -75,10 +77,10 @@ extension ListViewController {
         cell.selectionStyle = .none
         
         if let item = locations?[indexPath.row] {
-            cell.locationName?.text = item.name
+            cell.locationNameLabel?.text = item.name
             cell.categoryLabel?.text = item.category
         } else {
-            cell.locationName?.text = ""
+            cell.locationNameLabel?.text = ""
             cell.categoryLabel?.text = ""
         }
         

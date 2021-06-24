@@ -15,12 +15,17 @@ struct LocationData : Decodable {
 struct Feature : Decodable {
     let type : String
     let properties : Property
+    let geometry : Geometry
 }
 
 struct Property : Decodable {
     let name : String
     let category : String
     let address : String
+}
+
+struct Geometry : Decodable {
+    let coordinates : [Float]
 }
 
 
